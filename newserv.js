@@ -49,7 +49,7 @@ async function ping() {
     console.error("server offline");
   }
 }
-setInterval(()=>ping(),1000*60);
+setInterval(()=>ping(),1000*60*10);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
