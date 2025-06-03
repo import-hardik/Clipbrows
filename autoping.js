@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const PORT = 4000;
 const autoping ='http://localhost:4000/';
 const { Pool } = require('pg');
-require('dotenv').config();
+require('dotenv').config({ path: '/etc/secrets/.env' });
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
