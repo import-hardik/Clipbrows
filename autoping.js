@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const crypto = require('crypto');
 const PORT = 4000;
-const autoping ='http://localhost:4000/';
+const autoping ='https://clipbrowsmain.onrender.com';
 const { Pool } = require('pg');
 require('dotenv').config({ path: '/etc/secrets/.env' });
 const pool = new Pool({
@@ -85,7 +85,7 @@ app.post('/newuser', async (req, res) => {
   console.log(data)
   console.log("A--Data Entered");
   try {
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch('https://clipbrowsmain.onrender.com/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
