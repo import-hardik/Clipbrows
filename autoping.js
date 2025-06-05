@@ -101,7 +101,8 @@ app.post('/newuser', async (req, res) => {
       res.status(200).json({status:"RegisteredUser"});
     }
     else{
-      console.log("Update");
+      console.log("Update created user");
+      console.log({"userid":data.userid,"data":watermark,"lastused":(new Date())});
       cached[result.hash]={"userid":data.userid,"data":watermark,"lastused":(new Date())};
       res.status(200).json({status:"Created","hash":result.hash});
     }
