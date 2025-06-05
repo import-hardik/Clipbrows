@@ -77,7 +77,9 @@ app.post('/cache', async (req, res) => {
 app.post('/save', async (req, res) => {
   const data = req.body;
   //hash data timestamp packetno
-  cached[data.hash]={"data":data.data,"lastused":data.lastused};
+  // cached[data.hash]={"data":data.data,"lastused":data.lastused};
+  cached[data.hash]["data"]=data.data;
+  cached[data.hash]["lastused"]=data.lastused;
   res.status(200).json({status:"Received","pc":data.pc});
 });
 
