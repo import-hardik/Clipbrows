@@ -124,6 +124,7 @@ async function getUser(hash) {
 
     if (chachedata !== undefined) {
       console.log("found in db now chaching");
+      console.log(chachedata);
       cached[chachedata.hash] = {
         "userid":chachedata.userid,
         "data": chachedata.data,
