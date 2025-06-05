@@ -127,7 +127,7 @@ async function getUser(hash) {
       cached[chachedata.hash] = {
         "userid":chachedata.userid,
         "data": chachedata.data,
-        "lastused": chacedata.lastused
+        "lastused": chachedata.lastused
       };
       stats = "yes";
     }
