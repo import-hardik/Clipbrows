@@ -50,6 +50,8 @@ app.post('/cache', async (req, res) => {
 
   let response = {};
     if (data.hash && cached[data.hash] !== undefined) {
+      console.log("fetch data from chache");
+      console.log(cached[data.hash]["userid"]);
       response = cached[data.hash];
       response["status"]="ok";
       res.status(200).json(response);
@@ -111,7 +113,7 @@ app.post('/newuser', async (req, res) => {
 //db access
 async function getUser(hash) {
   let stats = "no";
-
+  console.log("searchng for hash"+hash);
   try {
     const client = await pool.connect();
     const query = "SELECT * FROM browsdb WHERE hash=$1";
@@ -121,6 +123,7 @@ async function getUser(hash) {
     const chachedata = result.rows[0];
 
     if (chachedata !== undefined) {
+      console.log("found in db now chaching");
       cached[chachedata.hash] = {
         "userid":chachedata.userid,
         "data": chachedata.data,
