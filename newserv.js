@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const crypto = require('crypto');
 const PORT = 3000;
-const autoping ='https://clipbrows.onrender.com/';
+const autoping ='https://autoping-6jmo.onrender.com/';
 
 app.use(express.json({ limit: '500mb' }));
 app.use(cors());
@@ -21,7 +21,7 @@ app.post('/login', async (req, res) => {
   const text =data.userid+data.pass;
   const hash = {"hash":crypto.createHash('sha256').update(text).digest('hex')};
   try {
-    const response = await fetch('https://clipbrows.onrender.com/cache', {
+    const response = await fetch('https://autoping-6jmo.onrender.com/cache', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(hash)
