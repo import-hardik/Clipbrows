@@ -42,8 +42,8 @@ app.post('/login', async (req, res) => {
 //autoping
 async function ping() {
   try {
-    // const response = await fetch(autoping);
-    // const data = await response.json();
+    const response = await fetch(autoping);
+    const data = await response.json();
     console.log("User Server Live");
   } catch (error) {
     console.error("server offline");
