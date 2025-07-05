@@ -187,6 +187,6 @@ async function ping() {
   }
 }
 setInterval(()=>ping(),1000*60*10);//10min
-// setInterval(()=>savecache(),1000*60*60*12);//12 hour
+setInterval(()=>savecache(),1000*60*60*12);//12 hour
 
-setInterval(()=>savecache(),1000*5);//12 hour
+// setInterval(()=>savecache(),1000*5);//12 hour
