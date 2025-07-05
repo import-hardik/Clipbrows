@@ -179,8 +179,8 @@ app.listen(PORT, () => {
 //repeating job
 async function ping() {
   try {
-    const response = await fetch(autoping);
-    const data = await response.json();
+    // const response = await fetch(autoping);
+    // const data = await response.json();
     console.log("Cache Server Running");
   } catch (error) {
     console.error("server offline");
